@@ -18,4 +18,5 @@ service StockTradingService{
   rpc getStockPrice(StockRequest) returns (StockResponse);
 
   // Server streaming.
+  rpc subscribeStockPrice(StockRequest) returns (stream StockResponse);
 }
