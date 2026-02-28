@@ -1,0 +1,21 @@
+syntax="proto3";
+option java_multiple_files=true;
+option java_package="com.ankit.grpc";
+option java_outer_classname="StockTradingProto";
+
+message StockRequest{
+  string stock_symbol=1;
+}
+
+message StockResponse{
+  string symbol=1;
+  double price=2;
+  string timestamp=3;
+}
+
+service StockTradingService{
+  // UNARY RPC -> get current stock price.
+  rpc getStockPrice(StockRequest) returns (StockResponse);
+
+  // Server streaming.
+}
